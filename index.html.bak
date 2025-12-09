@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Felix Kipngetich — Web Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="light">
+  <div class="container">
+    <!-- Left: Business Card -->
+    <aside class="card side-card" aria-labelledby="nameHeading">
+      <div class="card-header">
+        <div class="branding">
+          <div class="avatar" aria-hidden="true">
+            <img src="img/profile.svg" alt="Felix profile photo" class="avatar-img" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+            <span class="initials">FK</span>
+          </div>
+          <div class="name-block">
+            <h1 id="nameHeading">Felix Kipngetich</h1>
+            <p class="role">Web Developer • Data Analyst</p>
+          </div>
+        </div>
+        <div class="top-actions">
+          <div class="toggle" id="themeToggle" role="button" aria-pressed="false" tabindex="0" title="Toggle theme">
+            <span class="sr-only">Toggle dark mode</span>
+            <div class="switch" aria-hidden="true"><div class="knob" id="knob"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="summary">Practical, results-driven developer building accessible, maintainable web interfaces and data tools.</p>
+
+      <ul class="contact-list" aria-label="Contact details">
+        <li><a href="mailto:hello@example.com" class="contact-link">✉️ hello@example.com</a></li>
+        <li><a href="tel:+1234567890" class="contact-link">📞 +1 234 567 890</a></li>
+        <li><a href="#" class="contact-link" aria-label="GitHub profile">🐙 GitHub</a></li>
+      </ul>
+
+      <div class="skills" aria-hidden="false">
+        <span class="pill">HTML</span>
+        <span class="pill">CSS</span>
+        <span class="pill">JavaScript</span>
+        <span class="pill">React</span>
+        <span class="pill">Testing</span>
+      </div>
+
+      <div class="card-footer">
+        <a class="btn primary" href="#" download="FelixKipngetich-CV.pdf">Download CV</a>
+        <a class="btn outline" href="#">View Portfolio</a>
+      </div>
+    </aside>
+
+    <!-- Right: Details -->
+    <main class="right">
+      <section class="card hero" aria-labelledby="heroTitle">
+        <h2 id="heroTitle">Selected Projects & Highlights</h2>
+        <p>Clean, responsive portfolio card with accessible form, theme toggle, and simple interactions. Designed to be easy to scan by recruiters and fellow developers.</p>
+      </section>
+
+      <section class="card projects" aria-labelledby="projectsTitle">
+        <h3 id="projectsTitle" class="section-title">Projects</h3>
+        <div class="project"><h4>Interactive Contact Form</h4><p>Accessible form with validation and UX-first behavior.</p></div>
+        <div class="project"><h4>Mini Gallery</h4><p>Responsive image grid with keyboard-friendly navigation.</p></div>
+        <div class="project"><h4>Skill Graph</h4><p>Animated, minimal visualizations for skill levels.</p></div>
+      </section>
+
+      <section class="card contact" aria-labelledby="contactTitle">
+        <h3 id="contactTitle" class="section-title">Get in touch</h3>
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about the project or opportunity" required></textarea>
+          </div>
+
+          <div class="actions">
+            <button class="btn primary" id="sendBtn" type="button">Send Message</button>
+            <button class="btn ghost" type="reset">Reset</button>
+          </div>
+        </form>
+        <footer id="status" aria-live="polite" class="status">Not sent — demo only</footer>
+      </section>
+    </main>
+  </div>
+
+  <script>/* backup */</script>
+</body>
+</html>

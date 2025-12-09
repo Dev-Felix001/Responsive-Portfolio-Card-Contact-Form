@@ -1,0 +1,23 @@
+/* BACKUP of style.css */
+/* original content saved before finalization edits */
+
+/* ========= RESET & THEME VARIABLES ========= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #0ea5a4;
+  --glass: rgba(255,255,255,0.6);
+  --text: #0f172a;
+}
+[data-theme="dark"]{
+  --bg: #071025;
+  --card: #071827;
+  --muted: #9aa6b2;
+  --accent: #06b6d4;
+  --glass: rgba(255,255,255,0.05);
+  --text: #e6eef6;
+}
+
+/* ... rest of original file ... */

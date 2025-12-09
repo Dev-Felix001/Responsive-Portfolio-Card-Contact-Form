@@ -4,65 +4,70 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Felix Kipngetich | Project of the Day</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body data-theme="light">
   <div class="container">
-    <!-- Left Card -->
-    <div class="card">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <strong>Portfolio</strong>
-        <div class="toggle" id="themeToggle">
-          <div style="font-size:12px; color:var(--muted)">Dark</div>
-          <div class="switch"><div class="knob" id="knob"></div></div>
+    <!-- Left: Business Card -->
+    <aside class="card" aria-labelledby="profile-name">
+      <header class="card-top">
+        <div class="profile">
+          <div class="avatar" aria-hidden="true">
+            <img src="img/profile.svg" alt="Felix profile photo" class="avatar-img" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+            <span class="initials">FK</span>
+          </div>
+          <div class="name">
+            <h1 id="profile-name">Felix Kipngetich</h1>
+            <p class="muted">Software Engineering Student • Web Developer • Data Analyst</p>
+          </div>
         </div>
-      </div>
 
-      <div class="profile" style="margin-top:14px;">
-        <div class="avatar">FK</div>
-        <div class="name">
-          <h2>Felix Kipngetich</h2>
-          <p>Software Engineering Student • Web Developer • Data Analyst</p>
+        <div class="controls">
+          <button class="toggle" id="themeToggle" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle theme"></button>
         </div>
-      </div>
+      </header>
+
+      <p class="summary">Practical, results-driven developer building accessible, maintainable web interfaces and data tools.</p>
+
+      <section class="contact-list" aria-label="Contact details">
+        <a href="mailto:hello@example.com" class="contact-link">✉️ hello@example.com</a>
+        <a href="tel:+1234567890" class="contact-link">📞 +1 234 567 890</a>
+        <a href="#" class="contact-link" aria-label="GitHub profile">🐙 GitHub</a>
+      </section>
 
       <div class="skills">
-        <div class="pill">HTML</div>
-        <div class="pill">CSS</div>
-        <div class="pill">JavaScript</div>
-        <div class="pill">Audio ML</div>
-        <div class="pill">Testing</div>
+        <span class="pill">HTML</span>
+        <span class="pill">CSS</span>
+        <span class="pill">JavaScript</span>
+        <span class="pill">Audio ML</span>
+        <span class="pill">Testing</span>
       </div>
 
-      <div class="stats">
-        <div class="stat"><div style="font-weight:700;">12</div><div style="font-size:12px;color:var(--muted)">Projects</div></div>
-        <div class="stat"><div style="font-weight:700;">2 yrs</div><div style="font-size:12px;color:var(--muted)">Experience</div></div>
-        <div class="stat"><div style="font-weight:700;">4.9</div><div style="font-size:12px;color:var(--muted)">Rating</div></div>
+      <div class="actions-row">
+        <a class="btn" href="#" download>Download CV</a>
+        <a class="btn secondary" href="#">Follow</a>
       </div>
+    </aside>
 
-      <div class="buttons">
-        <button class="btn">Download CV</button>
-        <button class="btn secondary">Follow</button>
-      </div>
-    </div>
-
-    <!-- Right Side -->
-    <div class="right">
-      <div class="hero card">
-        <h1>Project of the Day</h1>
+    <!-- Right: Details -->
+    <main class="right">
+      <section class="card hero">
+        <h2>Project of the Day</h2>
         <p>Build and customize this responsive portfolio card. Try changing colors, adding links to GitHub/Netlify, or animations — every tweak improves your CSS/HTML mastery.</p>
-      </div>
+      </section>
 
-      <div class="card projects">
-        <div class="project"><h3>Interactive Contact Form</h3><p>Includes validation, password toggle, and dark mode. Perfect for practicing forms and event handling.</p></div>
-        <div class="project"><h3>Mini Gallery</h3><p>A responsive image grid with a modal viewer built using CSS Grid + JavaScript.</p></div>
-        <div class="project"><h3>Skill Graph</h3><p>Visualize skills using animated progress bars powered by CSS only.</p></div>
-      </div>
+      <section class="card projects" aria-labelledby="projectsTitle">
+        <h3 id="projectsTitle">Projects</h3>
+        <div class="project"><h4>Interactive Contact Form</h4><p>Includes validation, password toggle, and dark mode. Perfect for practicing forms and event handling.</p></div>
+        <div class="project"><h4>Mini Gallery</h4><p>A responsive image grid with a modal viewer built using CSS Grid + JavaScript.</p></div>
+        <div class="project"><h4>Skill Graph</h4><p>Visualize skills using animated progress bars powered by CSS only.</p></div>
+      </section>
 
-      <div class="contact card">
-        <h2>Contact Me</h2>
-        <form id="contactForm" onsubmit="return false;">
+      <section class="card contact">
+        <h3>Contact Me</h3>
+        <form id="contactForm">
           <div class="field">
             <label for="name">Full name</label>
             <input id="name" type="text" placeholder="Felix Kipngetich" required>
@@ -71,14 +76,6 @@
           <div class="field">
             <label for="email">Email</label>
             <input id="email" type="email" placeholder="you@example.com" required>
-          </div>
-
-          <div class="field">
-            <label for="password">Password (demo)</label>
-            <div style="display:flex; gap:8px;">
-              <input id="password" type="password" placeholder="Enter password" style="flex:1" required>
-              <button id="showBtn" class="btn ghost" type="button">Show</button>
-            </div>
           </div>
 
           <div class="field">
@@ -91,45 +88,49 @@
             <button class="btn ghost" type="reset">Reset</button>
           </div>
         </form>
-        <footer id="status">Not sent — demo only</footer>
-      </div>
-    </div>
+        <footer id="status" aria-live="polite">Not sent — demo only</footer>
+      </section>
+    </main>
   </div>
 
-  <!-- JavaScript -->
   <script>
-    // ===== Dark Mode Toggle =====
+    // ===== Dark Mode Toggle (keyboard + mouse) =====
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
     const saved = localStorage.getItem('theme');
     if (saved === 'dark') body.setAttribute('data-theme', 'dark');
 
+    function updateToggle() {
+      const isDark = body.getAttribute('data-theme') === 'dark';
+      themeToggle.setAttribute('aria-pressed', isDark.toString());
+      themeToggle.classList.toggle('on', isDark);
+    }
+
     themeToggle.addEventListener('click', () => {
       const isDark = body.getAttribute('data-theme') === 'dark';
       body.setAttribute('data-theme', isDark ? 'light' : 'dark');
       localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      updateToggle();
+    });
+    themeToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); themeToggle.click(); }
+    });
+    updateToggle();
+
+    // ===== Entrance animation =====
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.card').forEach((c, i) => setTimeout(() => c.classList.add('fade-in'), i * 80));
     });
 
-    // ===== Show / Hide Password =====
-    const showBtn = document.getElementById('showBtn');
-    const password = document.getElementById('password');
-    showBtn.addEventListener('click', () => {
-      const show = password.type === 'password';
-      password.type = show ? 'text' : 'password';
-      showBtn.textContent = show ? 'Hide' : 'Show';
-    });
-
-    // ===== Demo Submit Handler =====
-    const sendBtn = document.getElementById('sendBtn');
-    const status = document.getElementById('status');
-    sendBtn.addEventListener('click', () => {
+    // ===== Demo form handler =====
+    document.getElementById('sendBtn').addEventListener('click', () => {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       if (!name || !email) {
-        status.textContent = 'Please fill in all required fields.';
+        document.getElementById('status').textContent = 'Please fill in all required fields.';
         return;
       }
-      status.textContent = 'Message ready — (demo only). Check console.';
+      document.getElementById('status').textContent = 'Message ready — demo only. Check console.';
       console.log({ name, email, message: document.getElementById('message').value });
     });
   </script>
